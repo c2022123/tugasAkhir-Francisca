@@ -72,3 +72,13 @@ button a:hover {
 footer {
     background-color: rgb(123, 162, 172);
 }
+
+.btn-outline-success {
+    background: rgb(123, 162, 172);
+    color:white;
+}
+
+.btn-outline-success:hover {
+    background: rgb(83, 120, 130);
+    color: white;
+}

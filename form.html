@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form class="cmxform" id="commentForm" method="get" action="">
+        <fieldset>
+            <legend>Please provide your name, email address (won't be published) and a comment</legend>
+            <p>
+                <label for="cname">Name (required, at least 2 characters)</label>
+                <input id="cname" name="name" minlength="2" type="text" required>
+            </p>
+            <p>
+                <label for="cemail">E-Mail (required)</label>
+                <input id="cemail" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="curl">URL (optional)</label>
+                <input id="curl" type="url" name="url">
+            </p>
+            <p>
+                <label for="ccomment">Your comment (required)</label>
+                <textarea id="ccomment" name="comment" required></textarea>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //$("#basic-form").validate();
+            $("#commentForm").validate({
+
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 10
+                    },
+
+                    email: {
+                        required: true,
+                        email: true
+                    },
+
+                    url: {
+                        required: true,
+                        url: true
+                    },
+
+                    comment: {
+                        required: true
+                    }
+
+                },
+
+                messages: {
+                    name: {
+                        required: "Field form tidak boleh kosong",
+                        minlength: "username karakter harus lebih dari 3",
+                        maxlength: "username karakter tidak boleh lebih dari 20"
+                    },
+
+                    email: {
+                        required: "email harus diisi",
+                        required: "username karakter harus lebih dari 3",
+                        required: "username karakter tidak boleh lebih dari 20"
+
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
